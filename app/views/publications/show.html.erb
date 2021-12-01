@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1><strong><%= @publication.title %></strong></h1>
+
+<div class="container">
+  <% (1...@publication.images.count).each do |image| %>
+    <%= image_tag(@publication.images[image], :class=> 'images-show') %>  
+  <% end %>  
+
+</div>
+
+
+<p>
+  <strong>Description:</strong>
+  <%= @publication.description %>
+</p>
+
+
+<p>
+  <strong>Map:</strong>
+  <%= @publication.map %>
+</p>
+
+<% if current_user.admin? %>
+  <%= link_to 'Edit', edit_publication_path(@publication) %> |
+<% end %>
+ 
+<%= link_to 'Back', publications_path %>

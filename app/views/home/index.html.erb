@@ -1,0 +1,58 @@
+<header>
+    <div class="d-inline-block title-div p-4">
+        <h1>Entretención Inclusiva</h1>
+        <h3>Guía de destinos accesibles para todos y todas</h3>
+        <% if !user_signed_in? %>
+            <%= link_to "Registrate", new_user_registration_path, class: "btn btn-secondary"%>
+        <%end%>
+    </div>
+
+    <div class="d-inline-block img-title-div">
+        <img class="img-title" src="https://lv3.es/docs/f3b8bf98.jpg" alt="mujer en silla de ruedas sobre la arena">
+    </div>
+    
+</header>
+
+<% if !user_signed_in? %>
+    <section>
+        <div class="d-inline-block py-5 img-aboutUs" >
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnpsrqf-auo4RBFsSGFjaCrULChhlJWJs76esofbjqPiRXxYKwPTAwZAnCptYyBr0lhxM&usqp=CAU" alt="">
+        </div>
+
+        <div class="d-inline-block text-aboutUs">
+            <h1>Quiénes Somos</h1>
+            <p>Somos una web dedicada a divulgar informacion respecto a destinos turisticos y de entretencion accesibles </p>
+            <p>Para recomendaciones personalizadas y acceso a la seccion de comentarios de todos los usuarios de la comunidad registrate aqui!!</p>
+            <%= link_to "Registrate", new_user_registration_path, class: "btn btn-secondary"%>
+        </div>
+        
+    </section>
+<%end%>
+
+<main class="py-5">
+    <div class="text-center destinos">
+        <h1>Destinos</h1>
+        <h2>¿Dónde quieres ir?</h2>
+ 
+        <%= render "shared/selector"  %>
+
+       <%= link_to "Buscar", publications_path, class: "btn btn-secondary"%>
+       
+    </div>
+
+
+    
+</main>
+
+<% if user_signed_in? %>
+    <section class="py-5 text-center">
+        <h1>Quieres recomendar un sitio??</h1>
+        <button>Link a Formulario</button>
+    </section>
+<%end%>
+
+<footer class="bg-dark py-3">
+    <div class="text-center">
+        <p class="text-white">foooooter</p>
+    </div>
+</footer>

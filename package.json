@@ -1,0 +1,7 @@
+{
+  "name": "recreacionInclusiva",
+  "private": true,
+  "dependencies": {
+    "highcharts": "^9.3.2"
+  }
+}
