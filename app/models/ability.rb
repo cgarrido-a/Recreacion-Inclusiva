@@ -10,6 +10,7 @@ class Ability
       else
         can :update, User, id: user.id
         can :read, User, id: user.id
+        can :read, Publication
       end
     #
     # Define abilities for the passed in user here. For example:

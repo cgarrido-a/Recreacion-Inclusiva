@@ -30,4 +30,6 @@
 
 <br>
 
-<%= link_to 'New Publication', new_publication_path %>
+<% if current_user && current_user.admin? %>
+  <%= link_to 'New Publication', new_publication_path %>
+<%end%>

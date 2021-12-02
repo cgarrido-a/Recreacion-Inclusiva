@@ -21,8 +21,9 @@
   <%= @publication.map %>
 </p>
 
-<% if current_user.admin? %>
+<% if current_user && current_user.admin? %>
   <%= link_to 'Edit', edit_publication_path(@publication) %> |
-<% end %>
+<%end%>
+
  
 <%= link_to 'Back', publications_path %>
