@@ -4,14 +4,20 @@
     padding: 0;
 }
 
-// HEADER HOME
-
-header{
-    background-color: #77E4D4;
+body{
+    background-color:  #ffd8c6;
 }
 
-main{
+
+header,section, main{
     background-color: antiquewhite;
+    border-radius: 3em;
+    margin: 2em auto
+
+}
+
+.bg-color{
+    background-color: #d27300;
 }
 
 .title-div, .img-title-div, .img-aboutUs, .text-aboutUs{
@@ -20,6 +26,7 @@ main{
 
 .img-title{
     width: 100%;
+    background-size: cover;
 }
 
 .images-show{

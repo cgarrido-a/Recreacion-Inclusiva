@@ -4,3 +4,5 @@ Total usuarios registrados: <%= User.count %>
 
 Total usuarios registrados por mes:
 
+<%= column_chart @grafico, title: 'Usuarios por mes' %>
+
