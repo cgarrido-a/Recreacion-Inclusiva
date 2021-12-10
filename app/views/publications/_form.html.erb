@@ -17,6 +17,13 @@
   </div>
 
   <div class="field">
+    <%= form.label :region %>
+    <%= form.select(:region, [],{},{ :class => 'region-selector' }) %>
+  </div>
+
+  
+
+  <div class="field">
     <%= form.label :description %>
     <%= form.text_area :description, class: "form-control"  %>
   </div>

@@ -22,6 +22,33 @@
     <% end %>
 
     <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name, autofocus: true, class:"form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :rut%><br />
+      <%= f.text_field :rut, class:"form-control" %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :age %>
+      <%= f.number_field :age, class:"form-control" %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :avatar %>
+      <%= f.file_field :avatar, class:"form-control" %>
+    </div>
+
+    
+  
+    <div class="field">
+      <%= f.label :region %>
+      <%= f.text_field :region, class:"form-control"%>
+    </div>
+    
+    <div class="field">
       <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
       <%= f.password_field :password, autocomplete: "new-password", class:"form-control" %>
       <% if @minimum_password_length %>

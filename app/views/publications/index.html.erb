@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Publications</h1>
-<%= render "shared/selector"  %>
+<%= search_form_for @q do |f| %>
+  <%= f.label :region %>
+  <%= f.select(:region_eq, [],{include_blank: 'All'},{ :class => 'region-selector'}) %>
+  <%= f.submit %>
+<% end %>
 <div class="container">
   <div class="row">
     <% @publications.each do |publication| %>
@@ -14,7 +18,8 @@
             <div class="card-body">
               <h5 class="card-title"><%= link_to "#{publication.title}", publication_path(publication.id) %></h5>
               <p class="card-text"><%= publication.description.first(100) %></p>
-              <p><%= link_to "comentarios", comments_path %></p>
+              <p><%= link_to "comentarios", comments_path%></p>
+
             </div>
             <div>
               <!-- <%= render "publications/vote_link", publication: publication  %> -->

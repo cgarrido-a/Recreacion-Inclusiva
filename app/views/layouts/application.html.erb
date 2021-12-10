@@ -24,8 +24,10 @@
         <%= notice %>
       </div>
     <% end %>  
+    <div class="content">
+      <%= yield %>
+    </div>
     
-    <%= yield %>
 
     <%= render "shared/footer"  %>
 

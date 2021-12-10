@@ -3,7 +3,9 @@ class CommentsController < ApplicationController
 
   # GET /comments or /comments.json
   def index
-    @comments = Comment.all
+    @q = Publication.ransack(params[:q])
+    @publications = @q.result(distinct: true)
+    
   end
 
   # GET /comments/1 or /comments/1.json

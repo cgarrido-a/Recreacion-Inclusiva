@@ -20,18 +20,13 @@
     </div>
   
     <div class="field">
-      <%= f.label :address %>
-      <%= f.text_field :address, class:"form-control" %>
+      <%= f.label :avatar %>
+      <%= f.file_field :avatar, class:"form-control" %>
     </div>
 
     <div class="field">
-      <%= f.label :address %>
-      <%= f.text_field :address, class:"form-control" %>
-    </div>
-  
-    <div class="field">
       <%= f.label :region %>
-      <%= f.text_field :region, class:"form-control"%>
+      <%= f.select(:region, [],{},{ :class => 'region-selector' }) %>
     </div>
   
     <div class="field">

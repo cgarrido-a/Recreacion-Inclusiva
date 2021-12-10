@@ -4,7 +4,7 @@
 
 <p>
   <strong>Avatar:</strong>
-  <%= @user.avatar %>
+  <%= image_tag @user.avatar.variant(resize: "100x100") %>
 </p>
 
 <p>
@@ -22,9 +22,10 @@
   <%= @user.age %>
 </p>
 
+
 <p>
-  <strong>Address:</strong>
-  <%= @user.address %>
+  <strong>Region:</strong>
+  <%= @user.region %>
 </p>
 
 

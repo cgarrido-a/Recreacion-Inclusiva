@@ -11,6 +11,7 @@ class User::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
+    puts "****params#{params}"
     super
   end
 
@@ -20,9 +21,17 @@ class User::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    respond_to do |format|
+      if @user.update(user_params)
+        @user = User.all.order("created_at DESC")
+        format.js
+      else
+        format.js
+      end
+     
+    end
+  end
 
   # DELETE /resource
   # def destroy
@@ -38,16 +47,16 @@ class User::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:id])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:id, :region])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:id])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:id, :region])
   end
 
 

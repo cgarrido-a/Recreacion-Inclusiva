@@ -35,9 +35,12 @@
             <h1>Destinos</h1>
             <h2>¿Dónde quieres ir?</h2>
      
-            <%= render "shared/selector"  %>
+            <%= search_form_for @q do |f| %>
+                <%= f.label :region %>
+                <%= f.select(:region_eq, [],{include_blank: 'All'},{ :class => 'region-selector'}) %>
+                <%= f.submit %>
+            <% end %>
     
-           <%= link_to "Buscar", publications_path, class: "btn btn-secondary"%>
            
         </div>
     

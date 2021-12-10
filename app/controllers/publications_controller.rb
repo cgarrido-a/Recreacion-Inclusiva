@@ -3,7 +3,9 @@ class PublicationsController < ApplicationController
 
   # GET /publications or /publications.json
   def index
-    @publications = Publication.all
+    @q = Publication.ransack(params[:q])
+    @publications = @q.result(distinct: true)
+
  
 
   end
@@ -83,6 +85,6 @@ class PublicationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def publication_params
-      params.require(:publication).permit(:title, :description, :map, images:[])
+      params.require(:publication).permit(:title, :description, :region, :map, images:[])
     end
 end

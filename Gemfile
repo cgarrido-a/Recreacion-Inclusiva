@@ -32,6 +32,7 @@ gem 'cancancan'
 gem 'acts_as_votable'
 gem 'chartkick'
 gem 'activeadmin'
+gem 'ransack'
 
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
