@@ -12,6 +12,7 @@ class UsersController < ApplicationController
       @user = current_user
      redirect_to user_path(@user.id)
      end
+
   end
 
   # GET /users/1 or /users/1.json

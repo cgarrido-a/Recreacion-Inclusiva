@@ -2,14 +2,10 @@
 
 <h1>Comments</h1>
 
-<%= search_form_for @q do |f| %>
-  <%= f.label :id%>
-  <%= f.select(:id_eq, [],{include_blank: 'All'},{ :class => 'region-selector'}) %>
-  <%= f.submit %>
-<% end %>
 <table class="table">
   <thead>
     <tr>
+      <th>Title</th>
       <th>Text</th>
       <th>Images</th>
       <th>Publication</th>
@@ -22,6 +18,7 @@
   <tbody>
     <% @comments.each do |comment| %>
       <tr>
+        <td><%= comment.title %></td>
         <td><%= comment.text %></td>
         <td><%= comment.images %></td>
         <td><%= comment.publication.title %></td>
@@ -36,5 +33,5 @@
 </table>
 
 <br>
-
-<%= link_to 'New Comment', new_comment_path %>
+<%= link_to 'New', new_comment_path %>
+<%= link_to 'Atras', publications_path %>

@@ -9,11 +9,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'user/sessions'}
 
   resources :comments
-  resources :publications do 
-    member do
-      patch "vote", to: "publications#vote"
-    end
-  end
+  resources :publications 
   resources :users
 
 

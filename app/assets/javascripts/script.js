@@ -2,6 +2,9 @@ document.addEventListener("turbolinks:load", function () {
 
     const urlRegiones = 'https://apis.digital.gob.cl/dpa/regiones';
     getRegiones(urlRegiones);
+
+
+
 });
 
 const getRegiones = (url) => {

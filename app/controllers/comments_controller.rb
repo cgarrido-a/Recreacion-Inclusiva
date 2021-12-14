@@ -3,13 +3,17 @@ class CommentsController < ApplicationController
 
   # GET /comments or /comments.json
   def index
-    @q = Publication.ransack(params[:q])
-    @publications = @q.result(distinct: true)
-    
+    if can? :manage, Comment
+      @comments = Comment.all
+    else
+     redirect_to publications_path
+     end
+
   end
 
   # GET /comments/1 or /comments/1.json
   def show
+    
   end
 
   # GET /comments/new
@@ -51,10 +55,14 @@ class CommentsController < ApplicationController
 
   # DELETE /comments/1 or /comments/1.json
   def destroy
-    @comment.destroy
-    respond_to do |format|
-      format.html { redirect_to comments_url, notice: "Comment was successfully destroyed." }
-      format.json { head :no_content }
+    if (current_user.admin?) || (current_user==@comment.user)
+      @comment.destroy
+      respond_to do |format|
+        format.html { redirect_to comments_url, notice: "Comment was successfully destroyed." }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to publications_url, alert: "Usted no tiene los permisos para eliminar comentarios"
     end
   end
 
@@ -66,6 +74,6 @@ class CommentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit(:text, :images, :publication_id, :user_id)
+      params.require(:comment).permit(:text, :images, :publication_id, :user_id, :title)
     end
 end

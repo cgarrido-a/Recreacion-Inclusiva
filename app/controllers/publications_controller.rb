@@ -13,12 +13,16 @@ class PublicationsController < ApplicationController
   # GET /publications/1 or /publications/1.json
   def show
     @publication = Publication.with_attached_images.find(params[:id])
+    @comments = Comment.all
+    @comment = Comment.new(@comment_params)
+  
     
   end
 
   # GET /publications/new
   def new
     @publication = Publication.new
+    
   end
 
   # GET /publications/1/edit
@@ -70,13 +74,7 @@ class PublicationsController < ApplicationController
     end
   end
 
-  def vote
-    @publication = Publication.find(params[:id])
-    @publication.vote_by current_user
-    render 'vote.js.erb'
-
-  end
-
+ 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_publication

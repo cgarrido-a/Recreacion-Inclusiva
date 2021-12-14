@@ -9,23 +9,59 @@
     <% end %>  
   
   </div>
+
+  <div class="my-4">
+    <p>
+      <strong>Description:</strong>
+      <%= @publication.description %>
+    </p>
+    
+    <p>
+      <strong>Region:</strong>
+      <%= @publication.region %>
+    </p>
+    
+    
+    <p>
+      <strong>Map:</strong>
+      <%= @publication.map %>
+    </p>
+  </div>
   
+  <div class="my-5">
+    <h4 id="comments-section"> Comentarios:</h4>
+    <%= link_to 'Nuevo Comentario', new_comment_path %>
+    <table class="table">
+      <tbody>
+        
+        <% @comments.each do |comment| %>
+          <% if comment.publication.id == @publication.id %>
+            <tr>
+              <td><%= comment.title %></td>
+              <td><%= comment.text %></td>
+              <td><%= comment.images %></td>
+              <td><%= comment.publication.title %></td>
+              <td><%= comment.publication.id %></td>
+              <td><%= comment.user.name %></td>
+              <td><%= link_to 'Show', comment %></td>
+              <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
+              <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+    
+  </div>
+
+  <div class="my-5">
+    <div>
+   
   
-  <p>
-    <strong>Description:</strong>
-    <%= @publication.description %>
-  </p>
+    </div>
+    
+  </div>
   
-  <p>
-    <strong>Region:</strong>
-    <%= @publication.region %>
-  </p>
-  
-  
-  <p>
-    <strong>Map:</strong>
-    <%= @publication.map %>
-  </p>
 
   
   
