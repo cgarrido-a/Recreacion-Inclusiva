@@ -4,6 +4,10 @@
   <%= @comment.title %>
 </p>
 
+<div id="score-stars">
+  
+</div>
+
 <p>
   <strong>Text:</strong>
   <%= @comment.text %>
@@ -16,12 +20,12 @@
 
 <p>
   <strong>Publication:</strong>
-  <%= @comment.publication %>
+  <%= @comment.publication.title %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @comment.user %>
+  <%= @comment.user.name %>
 </p>
 
 <%= link_to 'Edit', edit_comment_path(@comment) %> |

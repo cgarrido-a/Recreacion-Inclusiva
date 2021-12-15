@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     def after_sign_in_path_for(resource)
     
         if current_user.try(:admin?)
-            dashboards_index_path
+           admin_dashboard_path
         else
             root_path
         end
@@ -16,6 +16,8 @@ class ApplicationController < ActionController::Base
 
     def configure_permitted_parameters
         devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :rut, :age, :avatar, :region])
+        devise_parameter_sanitizer.permit(:account_update, keys: [:name, :rut, :age, :avatar, :region])
+   
                       
       end
 end

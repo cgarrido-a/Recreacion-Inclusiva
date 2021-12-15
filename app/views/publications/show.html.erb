@@ -4,7 +4,7 @@
   <h1><strong><%= @publication.title %></strong></h1>
   
   <div class="container">
-    <% (1...@publication.images.count).each do |image| %>
+    <% (0...@publication.images.count).each do |image| %>
       <%= image_tag(@publication.images[image], :class=> 'images-show') %>  
     <% end %>  
   
@@ -26,7 +26,10 @@
       <strong>Map:</strong>
       <%= @publication.map %>
     </p>
+
   </div>
+ 
+</div>
   
   <div class="my-5">
     <h4 id="comments-section"> Comentarios:</h4>

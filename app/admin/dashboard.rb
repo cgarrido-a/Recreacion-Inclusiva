@@ -25,7 +25,20 @@ ActiveAdmin.register_page "Dashboard" do
       column do
         panel "Info" do
           para "Welcome to ActiveAdmin."
-          
+          div class: 'custom-class' do
+            h3 'Usuarios por dia'
+            @usuarios_registrados_por_dia = User.group_by_day(:created_at).count
+            render partial: 'shared/charts'
+          end
+        end
+      end
+
+      column do
+        panel "Numbers" do
+          div class: 'custom-class' do
+            h3 'Usuarios Totales'
+            render partial: 'shared/numeros'
+          end
         end
       end
     end

@@ -30,9 +30,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'cancancan'
 gem 'chartkick'
+gem 'groupdate'
 gem 'activeadmin'
 gem 'ransack'
-
+gem 'ratyrate'
 
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'

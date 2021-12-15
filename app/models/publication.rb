@@ -5,7 +5,7 @@ class Publication < ApplicationRecord
     validates :title, :description, :map, presence: true
     validate :image_type
 
-    
+  
 
     
     private

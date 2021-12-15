@@ -1,8 +1,19 @@
 <h1>Dashboard</h1>
 
-Total usuarios registrados: <%= User.count %>
+<div><p>Total usuarios registrados: <%= User.count %>
+</p></div>
 
-Total usuarios registrados por mes:
 
-<%= column_chart @grafico, title: 'Usuarios por mes' %>
+
+
+<%= line_chart @usuarios_registrados_por_dia, title: 'Usuarios por dia' %>
+
+<!-- <div >
+    <h3 class="mt-5">Listado regiones:</h3>
+    <ul id="regions"></ul>
+</div> -->
+
+
+
+
 

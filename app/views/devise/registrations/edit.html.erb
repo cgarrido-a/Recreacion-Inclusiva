@@ -45,8 +45,7 @@
   
     <div class="field">
       <%= f.label :region %>
-      <%= f.text_field :region, class:"form-control"%>
-    </div>
+      <%= f.select(:region, [],{},{ :class => 'region-selector' }) %>
     
     <div class="field">
       <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />

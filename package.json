@@ -2,6 +2,7 @@
   "name": "recreacionInclusiva",
   "private": true,
   "dependencies": {
+    "bootstrap-star-rating": "^4.1.2",
     "highcharts": "^9.3.2"
   }
 }
