@@ -6,8 +6,8 @@ Rails.application.routes.draw do
 
   get 'dashboards/index'
   
-  devise_for :users, controllers: { sessions: 'user/sessions'}
-  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+  devise_for :users, controllers: { sessions: 'user/sessions', omniauth_callbacks: "omniauth_callbacks"}
+ 
 
   resources :comments
   resources :publications 
