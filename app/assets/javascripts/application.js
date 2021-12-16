@@ -16,4 +16,5 @@
 //= require highcharts
 //= require chartkick
 //= require Chart.bundle
+//= require jquery.raty
 //= require_tree .
