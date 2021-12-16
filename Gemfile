@@ -33,7 +33,10 @@ gem 'chartkick'
 gem 'groupdate'
 gem 'activeadmin'
 gem 'ransack'
+gem 'omniauth'
+gem 'omniauth-github'
 gem 'omniauth-google-oauth2'
+gem 'dotenv-rails'
 
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
