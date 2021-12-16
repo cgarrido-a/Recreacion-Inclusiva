@@ -10,6 +10,13 @@ Rails.application.routes.draw do
   resources :publications 
   resources :users
 
+  namespace :paypal do 
+    resources :checkouts, only: [:create] do 
+      collection do 
+        get :complete
+      end
+    end
+  end
 
   root 'home#index'
 end

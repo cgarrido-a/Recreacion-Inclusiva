@@ -37,6 +37,9 @@ gem 'omniauth'
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 gem "omniauth-rails_csrf_protection"
 gem 'sendgrid-ruby'
+gem 'sendgrid-actionmailer'
+gem 'paypal-sdk-rest'
+
 
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
