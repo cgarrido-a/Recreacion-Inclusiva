@@ -1,48 +1,62 @@
-
-    <header class="container">
-        <div class="d-inline-block title-div p-4">
-            <h1>Entretención Inclusiva</h1>
-            <h3>Guía de destinos accesibles para todos y todas</h3>
-            <% if !user_signed_in? %>
-                <%= link_to "Registrate", new_user_registration_path, class: "btn btn-secondary"%>
-            <%end%>
-        </div>
+<header class="container my-5">
+     <div class="d-inline-block title-div p-4">
+        <h1>Entretención Inclusiva</h1>
+        <h3>Guía de destinos accesibles para todos y todas</h3>
+        <% if !user_signed_in? %>
+             <%= link_to "Registrate", new_user_registration_path, class: "btn btn-secondary"%>
+         <%end%>
+    </div>
     
-        <div class="d-inline-block img-title-div">
-            <img class="img-title" src="https://lv3.es/docs/f3b8bf98.jpg" alt="mujer en silla de ruedas sobre la arena">
-        </div>
+    <div class="d-inline-block img-title-div">
+        <img class="img-title" src="https://lv3.es/docs/f3b8bf98.jpg" alt="mujer en silla de ruedas sobre la arena">
+    </div>
         
-    </header>
+</header>
     
-    <% if !user_signed_in? %>
-        <section class="container shadow">
-            <div class="d-inline-block py-5 img-aboutUs" >
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnpsrqf-auo4RBFsSGFjaCrULChhlJWJs76esofbjqPiRXxYKwPTAwZAnCptYyBr0lhxM&usqp=CAU" alt="">
-            </div>
+<% if !user_signed_in? %>
+    <section class="container shadow my-5">
+        <div class="d-inline-block py-5 img-aboutUs" >
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnpsrqf-auo4RBFsSGFjaCrULChhlJWJs76esofbjqPiRXxYKwPTAwZAnCptYyBr0lhxM&usqp=CAU" alt="">
+        </div>
     
-            <div class="d-inline-block text-aboutUs">
-                <h1>Quiénes Somos</h1>
-                <p>Somos una web dedicada a divulgar informacion respecto a destinos turisticos y de entretencion accesibles </p>
-                <p>Para recomendaciones personalizadas y acceso a la seccion de comentarios de todos los usuarios de la comunidad registrate aqui!!</p>
-                <%= link_to "Registrate", new_user_registration_path, class: "btn btn-secondary"%>
-            </div>
+        <div class="d-inline-block text-aboutUs">
+            <h1>Quiénes Somos</h1>
+            <p>Somos una web dedicada a divulgar informacion respecto a destinos turisticos y de entretencion accesibles </p>
+            <p>Para recomendaciones personalizadas y acceso a la seccion de comentarios de todos los usuarios de la comunidad registrate aqui!!</p>
+            <%= link_to "Registrate", new_user_registration_path, class: "btn btn-secondary"%>
+        </div>
             
-        </section>
-    <%end%>
+    </section>
+<%end%>
     
-    <main class="py-5 container shadow">
-        <div class="text-center destinos">
-            <h1>Destinos</h1>
-            <h2>¿Dónde quieres ir?</h2>
-     
+<main class="py-5 my-5 container shadow">
+    <div class="text-center destinos">
+        <h1>Destinos</h1>
+        <h2>¿Dónde quieres ir?</h2>
+        
+        <div class="my-3">
             <%= search_form_for @q do |f| %>
                 <%= f.label :region %>
                 <%= f.select(:region_eq, [],{include_blank: 'All'},{ :class => 'region-selector'}) %>
-                <%= f.submit %>
+            <%= f.submit %>
             <% end %>
-    
-           
         </div>
+        
+        <div class="">
+            <h4 class="d-inline-block ">Hoteleria</h4>
+            <h4 class="d-inline-block mx-5">Gastronomia</h4>
+            <h4 class="d-inline-block">Entretencion</h4>
+            <div>
+                <a href="<%=publications_path%>"><%= image_tag 'hotel-presidente-4s.jpg', :class=> 'images-index' %></a>
+                <a href="<%=publications_path%>"><%= image_tag 'restaurant-scaled1000.jpg', :class=> 'images-index' %></a>
+                <a href="<%=publications_path%>"><%= image_tag 'portada_teatrouniversal_1200x800.jpg', :class=> 'images-index' %></a>
+                
+                
+             
+            </div>
+          
+        </div>   
+    </div>
     
     
         
@@ -51,7 +65,7 @@
     <% if user_signed_in? %>
         <section class="py-5 text-center container">
             <h1>Quieres recomendar un sitio??</h1>
-            <button>Link a Formulario</button>
+            <%= link_to "Link a Formulario", recomendation_index_path, class: "btn btn-success" %>
             
         </section>
     <%end%>
