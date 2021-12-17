@@ -40,7 +40,7 @@ gem 'sendgrid-ruby'
 gem 'sendgrid-actionmailer'
 gem 'paypal-sdk-rest'
 gem 'rollbar'
-
+gem 'kaminari'
 
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'

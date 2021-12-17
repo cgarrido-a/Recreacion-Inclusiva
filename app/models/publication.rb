@@ -5,6 +5,8 @@ class Publication < ApplicationRecord
     validates :title, :description, :map, presence: true
     validate :image_type
 
+    Publication.page(10)
+    paginates_per 5
 
     private
     def image_type

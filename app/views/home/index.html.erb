@@ -60,26 +60,22 @@
             </div>
           
         </div>   
-    </div>
+    </div>  
+</main>
     
-    
-        
-    </main>
-    
-    <% if user_signed_in? %>
-        <section class="py-5 text-center container">
-            <h1>Quieres recomendar un sitio??</h1>
-            <%= link_to "Link a Formulario", recomendation_index_path, class: "btn btn-success" %>
-            
-        </section>
-    <%end%>
-    
+<% if user_signed_in? %>
     <section class="py-5 text-center container">
-        <h1>Quieres ayudarnos a seguuir creciendo?</h1>
-        <div id="donate-button-container">
-            <div id="donate-button"></div>
-            <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
-            <script>
+        <h1>Quieres recomendar un sitio??</h1>
+        <%= link_to "Link a Formulario", recomendation_index_path, class: "btn btn-success" %>        
+    </section>
+<%end%>
+    
+<section class="py-5 text-center container">
+    <h1>Ayudanos a seguir creciendo</h1>
+    <div id="donate-button-container">
+        <div id="donate-button"></div>
+        <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+        <script>
             PayPal.Donation.Button({
             env:'production',
             hosted_button_id:'UMYVW69RC9N4S',
@@ -89,7 +85,6 @@
             title:'PayPal - The safer, easier way to pay online!',
             }
             }).render('#donate-button');
-            </script>
-            </div>
-            
-    </section>
+        </script>
+    </div>      
+</section>

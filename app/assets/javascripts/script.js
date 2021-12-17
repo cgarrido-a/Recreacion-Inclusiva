@@ -14,7 +14,6 @@ const getRegiones = (url) => {
         method: 'GET',
         success: function (response) {
             const regiones = response;
-            console.log(regiones)
             regiones.forEach(function (region) {
                 showRegiones(region);
             });
@@ -27,6 +26,7 @@ const getRegiones = (url) => {
 };
 
 const showRegiones = (region) => {
+    console.log('*************boton regiones******')
     $('.region-selector').append(`
         <option value="${region.nombre}">${region.nombre}</option>
     `);

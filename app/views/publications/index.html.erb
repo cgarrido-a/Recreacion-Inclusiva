@@ -1,38 +1,60 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Publications</h1>
-<%= search_form_for @q do |f| %>
-  <%= f.label :region %>
-  <%= f.select(:region_eq, [],{include_blank: 'All'},{ :class => 'region-selector'}) %>
-  <%= f.submit %>
-<% end %>
-<div class="container">
-  <div class="row">
-    <% @publications.each do |publication| %>
-      <div class="card mb-3 col-md-6" style="max-width: 540px;">
-        <div class="row no-gutters">
-            <div class="col-md-6">
-              <%= image_tag(publication.images[0], :class=> 'images-index') %>  
-            </div>
-          <div class="col-md-6">
-            <div class="card-body">
-              <h5 class="card-title"><%= link_to "#{publication.title}", publication_path(publication.id) %></h5>
-              <p class="card-text"><%= publication.description.first(100) %></p>
-
-            </div>
-            <div class="stars">
-              
+<div class="container card-publication shadow-lg my-5">
+  <p id="notice"><%= notice %></p>
+  <div class="container card-publication">
+    <h1 class="text-center my-5">Destinos</h1>
+  
+    <div class="my-3 text-center">
+      <h6>Búsqueda por región</h6>
+      <%= search_form_for @q do |f| %>
+          <%= f.select(:region_eq, [],{include_blank: 'All'},{ :class => 'region-selector'}) %>
+          <%= f.submit 'Buscar', :class => 'btn btn-info' %>
+       <% end %>
+    </div>
+    
+    <div class="my-3 text-center my-5">
+      <h6>Búsqueda por categoría</h6>
+      <%= search_form_for @q do |f| %>
+          <%= f.select(:category_eq, ["Hoteleria", "Gastronomia", "Entretencion"],{include_blank: 'All'}) %>
+          <%= f.submit 'Buscar', :class => 'btn btn-info'%>
+      <%end%>
+    </div>
+ 
+  
+  
+  <div class="container my-5 text-center">
+    <div class="row mx-auto d-flex justify-content-center">
+        <% @publications.each do |publication| %>
+          <div class="card mb-3 col-md-5 mr-5 " style="max-width: 540px;">
+            <div class="row no-gutters">
+                <div class="col-md-6">
+                  <%= image_tag(publication.images[0], :class=> 'images-index') %>  
+                </div>
+              <div class="col-md-6">
+                <div class="card-body">
+                  <h5 class="card-title"><%= link_to "#{publication.title}", publication_path(publication.id) %></h5>
+                  <p class="card-text"><%= publication.description.first(100) %></p>
+    
+                </div>
+                <div class="stars">
+                  
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
       </div>
-    <% end %>
+  </div> 
+    <br>
+    
+    <% if current_user && current_user.admin? %>
+      <%= link_to 'New Publication', new_publication_path %>
+    <%end%>
+  </div>
+  <div class=" my-4 p-5">
+    <div class="d-flex justify-content-center">
+        <%= paginate @publications %>
+    </div>
   </div>
 </div>
 
-
-<br>
-
-<% if current_user && current_user.admin? %>
-  <%= link_to 'New Publication', new_publication_path %>
-<%end%>
+</div>

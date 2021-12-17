@@ -7,6 +7,7 @@
 // ESTILOS PAGINA EN GENERAL
 body{
     background-color:  #F2F3F4;
+    background-image: url('fondo.jpg');
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -14,10 +15,15 @@ body{
 
 
 header,section, main, .form-div{
-    background-color: antiquewhite;
+    background-color: rgb(226, 218, 218);
     border-radius: 3em;
     margin: 2em auto
 
+}
+
+.card-publication{
+    background-color: rgb(226, 218, 218);
+    border-radius: 3em;
 }
 
 .content{
@@ -51,6 +57,7 @@ header,section, main, .form-div{
     width: 200px;
     height: 200px;
 }
+
 
 
 // FOOTER

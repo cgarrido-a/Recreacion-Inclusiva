@@ -1,10 +1,12 @@
 <div class="container mt-5">
+  <div class="container form-div p-5">
+    <h1 class="mb-5 text-center">Recomiéndanos un destino!!</h1>
     <%= form_with( local: true) do |form| %>  
     <div class="container w-50">
       
       <div class="field">
         <%= form.label :title %>
-        <%= form.text_field :title, class: "form-control" %>
+        <%= form.text_field :title, class: "form-control mb-4" %>
       </div>
     
       <div class="field">
@@ -12,29 +14,39 @@
         <%= form.select(:region, [],{},{ :class => 'region-selector' }) %>
       </div>
     
+      <div class="field">
+        <%= form.label :catergory, class: "mt-4" %>
+        <%= form.select(:category, ["Hoteleria", "Gastronomia", "Entretencion"],{},class: "form-control mb-4"  )%>
+      </div>
       
     
       <div class="field">
         <%= form.label :description %>
-        <%= form.text_area :description, class: "form-control"  %>
+        <%= form.text_area :description, class: "form-control mb-4"  %>
       </div>
     
       <div class="field">
         <%= form.label :images %>
-        <%= form.file_field :images, multiple: true, class: "form-control"  %>
+        <%= form.file_field :images, multiple: true, class: "mb-4"  %>
       </div>
     
     
       <div class="field">
         <%= form.label :map %>
-        <%= form.text_field :map, class: "form-control"  %>
+        <%= form.text_field :map, class: "form-control mb-4"  %>
       </div>
     
       <div class="actions">
-        <%= form.submit %>
+        <%= form.submit 'Enviar', :class => 'btn btn-info' %>
       </div>
     <% end %>
     
     </div>
+
+    <div class="mt-5">
+      <%= link_to 'Back', publications_path %>
+    </div>
+  </div>
+   
       
 </div>
