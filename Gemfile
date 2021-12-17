@@ -39,6 +39,7 @@ gem "omniauth-rails_csrf_protection"
 gem 'sendgrid-ruby'
 gem 'sendgrid-actionmailer'
 gem 'paypal-sdk-rest'
+gem 'dotenv-rails'
 
 
 # Use ActiveStorage variant
