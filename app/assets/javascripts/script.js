@@ -11,7 +11,7 @@ const getRegiones = (url) => {
 
     $.ajax({
         url: url,
-        method: 'POST',
+        method: 'GET',
         success: function (response) {
             const regiones = response;
             regiones.forEach(function (region) {
