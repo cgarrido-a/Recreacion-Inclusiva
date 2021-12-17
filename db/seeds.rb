@@ -11,3 +11,4 @@ AdminUser.create!(email: 'proyectorecreacioninclusiva@gmail.com', password: 'ef4
 
 
 
+Comment.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

@@ -1,37 +1,40 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Comments</h1>
+<div class="container card-publication shadow-lg my-5 p-5">
+  <h1>Comments</h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Text</th>
-      <th>Images</th>
-      <th>Publication</th>
-      <th>Publication</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @comments.each do |comment| %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= comment.title %></td>
-        <td><%= comment.text %></td>
-        <td><%= comment.images %></td>
-        <td><%= comment.publication.title %></td>
-        <td><%= comment.publication.id %></td>
-        <td><%= comment.user.name %></td>
-        <td><%= link_to 'Show', comment %></td>
-        <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Title</th>
+        <th>Text</th>
+        <th>Images</th>
+        <th>Publication</th>
+        <th>Publication</th>
+        <th>User</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-<%= link_to 'New', new_comment_path %>
-<%= link_to 'Atras', publications_path %>
+    </thead>
+  
+    <tbody>
+      <% @comments.each do |comment| %>
+        <tr>
+          <td><%= comment.title %></td>
+          <td><%= comment.text %></td>
+          <td><%= comment.images %></td>
+          <td><%= comment.publication.title %></td>
+          <td><%= comment.publication.id %></td>
+          <td><%= comment.user.name %></td>
+          <td><%= link_to 'Show', comment %></td>
+          <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
+          <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
+  <br>
+  <%= link_to 'Nuevo Comentario', new_comment_path %> <br>
+  <%= link_to 'Atras', publications_path %>
+  
+</div>
