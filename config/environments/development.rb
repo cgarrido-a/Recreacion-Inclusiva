@@ -60,16 +60,13 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000}
-  config.action_mailer.delivery_method = :sendgrid_actionmailer
-  config.action_mailer.sendgrid_actionmailer_settings = {
-  api_key:  ENV['SENDGRID_API_KEY'],
-  raise_delivery_errors: true
-}
+
+  config.action_mailer.delivery_method = :smtp
 
   ActionMailer::Base.smtp_settings = {
     :user_name => 'apikey',
-    :password =>ENV['SENDGRID_API_KEY'],
-    :domain => 'proyectorecreacioninclusiva@gmail.com',
+    :password => Rails.application.credentials.dig(:sendgrid, :sendgrid_api_key),
+    :domain => 'proyectori427@gmail.com',
     :address => 'smtp.sendgrid.net',
     :port => 587,
     :authentication => :plain,
