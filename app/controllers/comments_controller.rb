@@ -34,6 +34,7 @@ class CommentsController < ApplicationController
   # GET /comments/new
   def new
     @comment = Comment.new
+    @user = current_user
   end
 
   # GET /comments/1/edit

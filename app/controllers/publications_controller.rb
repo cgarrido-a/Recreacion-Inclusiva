@@ -6,7 +6,7 @@ class PublicationsController < ApplicationController
     @q = Publication.ransack(params[:q])
     @publications = @q.result(distinct: true)
 
-    @publications = Publication.order(created_at: :desc).page params[:page]
+    @publication = Publication.order(created_at: :desc).page params[:page]
 
   end
 

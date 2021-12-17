@@ -1,32 +1,32 @@
 <p id="notice"><%= notice %></p>
-<p>
-  <strong>Title:</strong>
-  <%= @comment.title %>
-</p>
 
-<div id="score-stars">
-  <%= @comment.score%>
+<div class="container card-publication shadow-lg my-5 p-5">
+  <p>
+    <strong>Title:</strong>
+    <%= @comment.title %>
+  </p>
+  
+  <div id="score-stars">
+    <%= @comment.score%>
+  </div>
+  
+  <p>
+    <strong>Text:</strong>
+    <%= @comment.text %>
+  </p>
+  
+  <p>
+    <strong>Publication:</strong>
+    <%= @comment.publication.title %>
+  </p>
+  
+  <p>
+    <strong>User:</strong>
+    <%= @comment.user.name %>
+  </p>
+  
+  <%= link_to 'Edit', edit_comment_path(@comment) %> |
+  <%= link_to 'Back', comments_path %>
+  
 </div>
 
-<p>
-  <strong>Text:</strong>
-  <%= @comment.text %>
-</p>
-
-<p>
-  <strong>Images:</strong>
-  <%= @comment.images %>
-</p>
-
-<p>
-  <strong>Publication:</strong>
-  <%= @comment.publication.title %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @comment.user.name %>
-</p>
-
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>

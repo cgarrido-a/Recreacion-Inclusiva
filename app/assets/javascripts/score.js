@@ -6,16 +6,6 @@ document.addEventListener("turbolinks:load", function () {
     $("#input-id").on('rating:change', function (event, value, caption) {
         const stars = $(this).val()
 
-        $.ajax({
-            type: "POST",
-            url: stars,
-            success: function (stars) {
-                $(".comment-submit").append(`<%= Score: ${stars}%>`)
-            },
-
-
-        })
-
     });
 
 
