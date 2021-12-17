@@ -5,9 +5,7 @@ class Publication < ApplicationRecord
     validates :title, :description, :map, presence: true
     validate :image_type
 
-  
 
-    
     private
     def image_type
         if images.attached? == false

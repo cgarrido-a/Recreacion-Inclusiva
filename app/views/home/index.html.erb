@@ -32,27 +32,31 @@
 <main class="py-5 my-5 container shadow">
     <div class="text-center destinos">
         <h1>Destinos</h1>
-        <h2>¿Dónde quieres ir?</h2>
+        <h2>¿Qué lugares quieres visitar?</h2>
         
         <div class="my-3">
+            <h6>Busqueda por región</h6>
             <%= search_form_for @q do |f| %>
-                <%= f.label :region %>
                 <%= f.select(:region_eq, [],{include_blank: 'All'},{ :class => 'region-selector'}) %>
-            <%= f.submit %>
+            <%= f.submit 'Buscar', :class => 'btn btn-info' %>
             <% end %>
+        </div>
+
+        <div class="my-3">
+            <h6>Busqueda por categoría</h6>
+            <%= search_form_for @q do |f| %>
+                <%= f.select(:category_eq, ["Hoteleria", "Gastronomia", "Entretencion"],{include_blank: 'All'}) %>
+                <%= f.submit 'Buscar', :class => 'btn btn-info'%>
+            <%end%>
         </div>
         
         <div class="">
-            <h4 class="d-inline-block ">Hoteleria</h4>
-            <h4 class="d-inline-block mx-5">Gastronomia</h4>
-            <h4 class="d-inline-block">Entretencion</h4>
             <div>
-                <a href="<%=publications_path%>"><%= image_tag 'hotel-presidente-4s.jpg', :class=> 'images-index' %></a>
-                <a href="<%=publications_path%>"><%= image_tag 'restaurant-scaled1000.jpg', :class=> 'images-index' %></a>
-                <a href="<%=publications_path%>"><%= image_tag 'portada_teatrouniversal_1200x800.jpg', :class=> 'images-index' %></a>
+                <a href="<%=publications_path%>"><%= image_tag 'hotel-presidente-4s.jpg', :class=> 'images-index rounded' %></a>
+                <a href="<%=publications_path%>"><%= image_tag 'restaurant-scaled1000.jpg', :class=> 'images-index rounded' %></a>
+                <a href="<%=publications_path%>"><%= image_tag 'portada_teatrouniversal_1200x800.jpg', :class=> 'images-index rounded' %></a>
                 
-                
-             
+      
             </div>
           
         </div>   

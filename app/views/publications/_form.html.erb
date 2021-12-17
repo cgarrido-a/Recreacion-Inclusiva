@@ -14,7 +14,7 @@
   
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title, class: "form-control" %>
+    <%= form.text_field :title, class: "form-control mb-4" %>
   </div>
 
   <div class="field">
@@ -22,26 +22,30 @@
     <%= form.select(:region, [],{},{ :class => 'region-selector' }) %>
   </div>
 
+  <div class="field">
+    <%= form.label :catergory, class: "mt-4" %>
+    <%= form.select(:category, ["Hoteleria", "Gastronomia", "Entretencion"],{},class: "form-control mb-4"  )%>
+  </div>
   
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, class: "form-control"  %>
+    <%= form.label :description, class: "mt-4" %>
+    <%= form.text_area :description, class: "form-control mb-4"  %>
   </div>
 
   <div class="field">
     <%= form.label :images %>
-    <%= form.file_field :images, multiple: true, class: "form-control"  %>
+    <%= form.file_field :images, multiple: true, class: " mb-4"  %>
   </div>
 
 
   <div class="field">
     <%= form.label :map %>
-    <%= form.text_field :map, class: "form-control"  %>
+    <%= form.text_field :map, class: "form-control mb-4"  %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :enviar, class: "btn btn-secondary" %>
   </div>
 <% end %>
 
