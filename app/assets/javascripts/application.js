@@ -17,4 +17,6 @@
 //= require chartkick
 //= require Chart.bundle
 //= require jquery.raty
+//= require jquery
+//= require jquery_ujs
 //= require_tree .
