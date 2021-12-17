@@ -1,40 +1,43 @@
-<p id="notice"><%= notice %></p>
+<div class="container card-publication shadow-lg my-5 p-5">
+  <p id="notice"><%= notice %></p>
 
-<h1>Mi Perfil</h1>
-
-<p>
-  <strong>Avatar:</strong>
-  <% if @user.avatar.attached? %>
-    <%= image_tag @user.avatar.variant(resize: "100x100") %>
-  <% end %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Rut:</strong>
-  <%= @user.rut %>
-</p>
-
-<p>
-  <strong>Age:</strong>
-  <%= @user.age %>
-</p>
-
-
-<p>
-  <strong>Region:</strong>
-  <%= @user.region %>
-</p>
-
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Edit', edit_user_registration_path(@user) %> |
-<%= link_to 'Back', root_path %>
+  <h1>Mi Perfil</h1>
+  
+  <p>
+    <strong>Avatar:</strong>
+    <% if @user.avatar.attached? %>
+      <%= image_tag @user.avatar.variant(resize: "100x100") %>
+    <% end %>
+  </p>
+  
+  <p>
+    <strong>Name:</strong>
+    <%= @user.name %>
+  </p>
+  
+  <p>
+    <strong>Rut:</strong>
+    <%= @user.rut %>
+  </p>
+  
+  <p>
+    <strong>Age:</strong>
+    <%= @user.age %>
+  </p>
+  
+  
+  <p>
+    <strong>Region:</strong>
+    <%= @user.region %>
+  </p>
+  
+  
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
+  
+  <%= link_to 'Edit', edit_user_registration_path(@user) %> |
+  <%= link_to 'Back', root_path %>
+  
+</div>

@@ -42,7 +42,14 @@ ActiveAdmin.register_page "Dashboard" do
         end
       end
 
-      
+       column do
+        panel "Link" do
+          div class: 'custom-class' do
+            h3 'Usuarios Totales'
+            render partial: 'shared/users_link'
+          end
+        end
+      end
     end
   end # content
 end
