@@ -5,7 +5,7 @@ document.addEventListener("turbolinks:load", function () {
 
     $("#input-id").on('rating:change', function (event, value, caption) {
         const stars = $(this).val()
-
+        $('#score-stars').append(`<p>${stars} estrellas!</p>`)
     });
 
 

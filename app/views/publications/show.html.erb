@@ -41,7 +41,9 @@
 <!-- COMENTARIOS DE PUBLICACION -->
 <div class="container card-publication p-5 mt-5">
     <h4 id="comments-section"> Comentarios:</h4>
-    <%= link_to 'Nuevo Comentario', new_comment_path %>
+    <% if signed_in? %>
+      <%= link_to 'Nuevo Comentario', new_comment_path %>
+    <% end %>  
     <table class="table">
       <tbody>
         

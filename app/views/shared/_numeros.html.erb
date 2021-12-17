@@ -1,1 +1,3 @@
-<%= User.count %>
+Usuarios :<%= User.count %> <br>
+Publicaciones : <%= Publication.count %> <br>
+Usuarios registrados por dia: <%= User.group_by_day(:created_at).count %>
