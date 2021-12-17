@@ -2,11 +2,12 @@
 require_relative 'application'
 
 # Initialize the Rails application.
-Rails.application.initialize!
+# Rails.application.initialize!
 
  # rollbar
-require File.expand_path('../application', __FILE__)
-require File.expand_path('../rollbar', __FILE__)
+
+  require File.expand_path('../application', __FILE__)
+  require File.expand_path('../rollbar', __FILE__)
 
 notify = -> (e) do
     begin

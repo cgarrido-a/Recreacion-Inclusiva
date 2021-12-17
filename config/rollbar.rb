@@ -9,8 +9,7 @@ Rollbar.configure do |config|
     config.enabled = false
   end
 
-  Rails.logger.extend(ActiveSupport::Logger.broadcast(Rollbar::Logger.new))
-
+ 
   # By default, Rollbar will try to call the `current_user` controller method
   # to fetch the logged-in user object, and then call that object's `id`
   # method to fetch this property. To customize:
@@ -38,7 +37,7 @@ Rollbar.configure do |config|
 
   # Enable asynchronous reporting (uses girl_friday or Threading if girl_friday
   # is not installed)
-  # config.use_async = true
+  config.use_async = true
   # Supply your own async handler:
   # config.async_handler = Proc.new { |payload|
   #  Thread.new { Rollbar.process_from_async_handler(payload) }
