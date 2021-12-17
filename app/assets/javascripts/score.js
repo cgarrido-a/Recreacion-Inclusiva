@@ -5,10 +5,17 @@ document.addEventListener("turbolinks:load", function () {
 
     $("#input-id").on('rating:change', function (event, value, caption) {
         const stars = $(this).val()
-        $(".comment-submit")
-        alert(stars)
-        $("#score-stars").append(`<strong>Score: ${parseInt(stars)}</strong>`)
-        console.log(parseInt(stars))
+
+        $.ajax({
+            type: "POST",
+            url: stars,
+            success: function (stars) {
+                $(".comment-submit").append(`<%= Score: ${stars}%>`)
+            },
+
+
+        })
+
     });
 
 
