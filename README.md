@@ -34,57 +34,57 @@ El tema de este proyecto final de carrera es de libre elección y se desarrollar
 Instrucciones especificas del proyecto final:
 
 1. DESARROLLO
-  -Integrar login y registro con Devise usando email.
-  
-  -Implementar permisos considerando múltiples roles.
-  
-  -Integrar un panel de control que permita administrar los recursos. Considerar que sólo los
-  usuarios con permisos o roles suficientes pueden entrar al panel de control; el panel puede ser
-  implementado desde cero o usar una gema que cumpla esta funcionalidad.
-  
-  -El usuario puede editar sus datos de perfil. Esta funcionalidad debe ser implementada usando
-  AJAX sin UJS.
-  
-  -El usuario en su perfil debe ver una lista con los servicios o productos que ha contratado. La
-  lista debe estar separada con los que han sido entregados o solicitados en el pasado y los que
-  serán entregados en el futuro.
-  
-  -El home de la plataforma debe estar diferenciado para aquellos usuarios que han iniciado
-  sesión y los que no. Para los usuarios anónimos debe aparecer un landing page explicando el
-  servicio o producto, mientras que los usuarios podrán ver una funcionalidad especial. Esta
-  funcionalidad debe ser desarrollada usando un formulario avanzado, ya sea un buscador con
-  filtros, formulario de registro especial o elementos dinámicos.
+      -Integrar login y registro con Devise usando email.
 
-  -La plataforma debe incluir un sistema de calificación, ya sea en los productos, servicio
-  ofrecidos o para los usuarios respectivamente.
-  
-  -El usuario debe interactuar con los productos o servicios ofrecidos, por ejemplo haciendo una
-  reserva de hora, comprando un producto o solicitar un servicio. Considerar las respectivas
-  restricciones para cada caso, por ejemplo un usuario no puede solicitar comida en un
-  restaurante que está cerrado.
-  
-  -El usuario puede eliminar recursos que se ha asignado, por ejemplo cancelar una orden de
-  comida o cancelar una hora al médico.
+      -Implementar permisos considerando múltiples roles.
+
+      -Integrar un panel de control que permita administrar los recursos. Considerar que sólo los
+      usuarios con permisos o roles suficientes pueden entrar al panel de control; el panel puede ser
+      implementado desde cero o usar una gema que cumpla esta funcionalidad.
+
+      -El usuario puede editar sus datos de perfil. Esta funcionalidad debe ser implementada usando
+      AJAX sin UJS.
+
+      -El usuario en su perfil debe ver una lista con los servicios o productos que ha contratado. La
+      lista debe estar separada con los que han sido entregados o solicitados en el pasado y los que
+      serán entregados en el futuro.
+
+      -El home de la plataforma debe estar diferenciado para aquellos usuarios que han iniciado
+      sesión y los que no. Para los usuarios anónimos debe aparecer un landing page explicando el
+      servicio o producto, mientras que los usuarios podrán ver una funcionalidad especial. Esta
+      funcionalidad debe ser desarrollada usando un formulario avanzado, ya sea un buscador con
+      filtros, formulario de registro especial o elementos dinámicos.
+
+      -La plataforma debe incluir un sistema de calificación, ya sea en los productos, servicio
+      ofrecidos o para los usuarios respectivamente.
+
+      -El usuario debe interactuar con los productos o servicios ofrecidos, por ejemplo haciendo una
+      reserva de hora, comprando un producto o solicitar un servicio. Considerar las respectivas
+      restricciones para cada caso, por ejemplo un usuario no puede solicitar comida en un
+      restaurante que está cerrado.
+
+      -El usuario puede eliminar recursos que se ha asignado, por ejemplo cancelar una orden de
+      comida o cancelar una hora al médico.
 
 2. INTEGRACION
-  -Implementar registro y login usando OAuth (google, facebook, twiter, github, etc). 
-  
-  -Implementar pagos con PayPal implementando un botón de pago.
-  
-  -Implementar dashboard simple en el perfil del usuario que incluya al menos dos gráficos
-  mostrando información relevante.
-  
-  -Usar un servicio de mailing para una de las funcionalidades, por ejemplo para notificar
-  eventos, una compra, eliminación de servicios, etc. Se puede usar proveedores como mailgun,
-  sendgrid, sparkpost, etc. 
-  
+      -Implementar registro y login usando OAuth (google, facebook, twiter, github, etc). 
+
+      -Implementar pagos con PayPal implementando un botón de pago.
+
+      -Implementar dashboard simple en el perfil del usuario que incluya al menos dos gráficos
+      mostrando información relevante.
+
+      -Usar un servicio de mailing para una de las funcionalidades, por ejemplo para notificar
+      eventos, una compra, eliminación de servicios, etc. Se puede usar proveedores como mailgun,
+      sendgrid, sparkpost, etc. 
+
 3. DEPLOYMENT
-  -Desplegar la plataforma en un servicio como Heroku, Digital Ocean, Linode u otro. La
-  plataforma debe estar operativa y sin errores de ejecución. 
-  
-  -Configurar un dominio o subdominio para que apunte a la plataforma.
-  
-  -Configurar un servicio de reporte de errores como Rollbar, Sentry u otro.
-  
-  -Incluir un archivo README con las instrucciones de deployment, configuración y puesta en
-  marcha. También es válido que el servicio esté dentro de un contenedor Docker.
+      -Desplegar la plataforma en un servicio como Heroku, Digital Ocean, Linode u otro. La
+      plataforma debe estar operativa y sin errores de ejecución. 
+
+      -Configurar un dominio o subdominio para que apunte a la plataforma.
+
+      -Configurar un servicio de reporte de errores como Rollbar, Sentry u otro.
+
+      -Incluir un archivo README con las instrucciones de deployment, configuración y puesta en
+      marcha. También es válido que el servicio esté dentro de un contenedor Docker.
