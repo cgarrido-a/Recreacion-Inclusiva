@@ -1,5 +1,7 @@
 # README
 
+WORK IN PROGRESS 
+
 Instrucciones Generales para el proyecto final:
 
 El tema de este proyecto final de carrera es de libre elección y se desarrollará de manera individual.
