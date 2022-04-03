@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
     require 'sendgrid-ruby'
    
     from = SendGrid::Email.new(email: 'proyectori427@gmail.com')
-    to = SendGrid::Email.new(email:'proyectorecreacioninclusiva@gmail.com')
+    to = SendGrid::Email.new(email: current_user.email)
     subject = 'Muchas gracias por tu comentario!!'
     content = SendGrid::Content.new(type: 'text/plain', value: 'Tus comentarios son importantes para nosotros. Gracias por aportar a la construccion diaria de esta comunidad')
     mail = SendGrid::Mail.new(from, subject, to, content)

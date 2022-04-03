@@ -1,90 +1,108 @@
-<header class="container my-5">
-     <div class="d-inline-block title-div p-4">
-        <h1>Entretención Inclusiva</h1>
-        <h3>Guía de destinos accesibles para todos y todas</h3>
-        <% if !user_signed_in? %>
-             <%= link_to "Registrate", new_user_registration_path, class: "btn btn-secondary"%>
-         <%end%>
-    </div>
-    
-    <div class="d-inline-block img-title-div">
-        <img class="img-title" src="https://lv3.es/docs/f3b8bf98.jpg" alt="mujer en silla de ruedas sobre la arena">
-    </div>
-        
-</header>
-    
-<% if !user_signed_in? %>
-    <section class="container shadow my-5">
-        <div class="d-inline-block py-5 img-aboutUs" >
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnpsrqf-auo4RBFsSGFjaCrULChhlJWJs76esofbjqPiRXxYKwPTAwZAnCptYyBr0lhxM&usqp=CAU" alt="">
-        </div>
-    
-        <div class="d-inline-block text-aboutUs">
-            <h1>Quiénes Somos</h1>
-            <p>Somos una web dedicada a divulgar informacion respecto a destinos turisticos y de entretencion accesibles </p>
-            <p>Para recomendaciones personalizadas y acceso a la seccion de comentarios de todos los usuarios de la comunidad registrate aqui!!</p>
-            <%= link_to "Registrate", new_user_registration_path, class: "btn btn-secondary"%>
-        </div>
-            
-    </section>
-<%end%>
-    
-<main class="py-5 my-5 container shadow">
-    <div class="text-center destinos">
-        <h1>Destinos</h1>
-        <h2>¿Qué lugares quieres visitar?</h2>
-        
-        <div class="my-3">
-            <h6>Busqueda por región</h6>
-            <%= search_form_for @q do |f| %>
-                <%= f.select(:region_eq, [],{include_blank: 'All'},{ :class => 'region-selector'}) %>
-            <%= f.submit 'Buscar', :class => 'btn btn-info' %>
-            <% end %>
-        </div>
+<%= render "shared/navbar" %>
 
-        <div class="my-3">
-            <h6>Busqueda por categoría</h6>
-            <%= search_form_for @q do |f| %>
-                <%= f.select(:category_eq, ["Hoteleria", "Gastronomia", "Entretencion"],{include_blank: 'All'}) %>
-                <%= f.submit 'Buscar', :class => 'btn btn-info'%>
-            <%end%>
-        </div>
-        
-        <div class="">
-            <div>
-                <a href="<%=publications_path%>"><%= image_tag 'hotel-presidente-4s.jpg', :class=> 'images-index rounded' %></a>
-                <a href="<%=publications_path%>"><%= image_tag 'restaurant-scaled1000.jpg', :class=> 'images-index rounded' %></a>
-                <a href="<%=publications_path%>"><%= image_tag 'portada_teatrouniversal_1200x800.jpg', :class=> 'images-index rounded' %></a>
-                
-      
-            </div>
-          
-        </div>   
-    </div>  
-</main>
-    
-<% if user_signed_in? %>
-    <section class="py-5 text-center container">
-        <h1>Quieres recomendar un sitio??</h1>
-        <%= link_to "Link a Formulario", recomendation_index_path, class: "btn btn-success" %>        
-    </section>
+<header class="home-header">
+  <div class="row header-content">
+    <div class="col-md-6">
+      <h1>Conoce todos los destinos accesibles para tí</h1>
+      <h3>Únete a esta comunidad y comparte tus experiencias</h3>
+      <%= link_to "Registrate", new_user_registration_path, class: "btn
+      btn-info"%>
+    </div>
+    <div class="col-md-6">
+      <%= image_tag 'pareja-playa.jpg', class: 'img-portada' %>
+    </div>
+  </div>
+ 
+</header>
+
+<% if !user_signed_in? %>
+<section class="container shadow my-5">
+  <div class="d-inline-block py-5 img-aboutUs">
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnpsrqf-auo4RBFsSGFjaCrULChhlJWJs76esofbjqPiRXxYKwPTAwZAnCptYyBr0lhxM&usqp=CAU"
+      alt=""
+    />
+  </div>
+
+  <div class="d-inline-block text-aboutUs">
+    <h1>Quiénes Somos</h1>
+    <p>
+      Somos una web dedicada a divulgar informacion respecto a destinos
+      turisticos y de entretencion accesibles
+    </p>
+    <p>
+      Para recomendaciones personalizadas y acceso a la seccion de comentarios
+      de todos los usuarios de la comunidad registrate aqui!!
+    </p>
+    <%= link_to "Registrate", new_user_registration_path, class: "btn
+    btn-info"%>
+  </div>
+</section>
 <%end%>
-    
+
+<main class="py-5 my-5 container shadow">
+  <div class="text-center destinos">
+    <h1>Destinos</h1>
+    <h2>¿Qué lugares quieres visitar?</h2>
+
+    <div class="my-3">
+      <h6>Busqueda por región</h6>
+      <%= search_form_for @q do |f| %>
+        <%= f.select(:region_eq,[],{include_blank: 'All'},{ :class => 'region-selector'}) %> 
+        <%= f.submit 'Buscar', :class =>  'btn btn-info' %> 
+      <% end %>
+    </div>
+
+    <div class="my-3">
+      <h6>Busqueda por categoría</h6>
+      <%= search_form_for @q do |f| %> 
+        <%= f.select(:category_eq, ["Hoteleria", "Gastronomia", "Entretencion"],{include_blank: 'All'}) %> 
+        <%= f.submit 'Buscar', :class => 'btn btn-info'%>
+      <%end%>
+    </div>
+
+    <div class="">
+      <div>
+        <a href="<%=publications_path%>"
+          ><%= image_tag 'fondo_fun.jpg', :class=> 'images-index rounded' %></a
+        >
+        <a href="<%=publications_path%>"
+          ><%= image_tag 'fondo_fun.jpg', :class=> 'images-index rounded' %></a
+        >
+        <a href="<%=publications_path%>"
+          ><%= image_tag 'fondo_fun.jpg', :class=> 'images-index rounded' %></a
+        >
+      </div>
+    </div>
+  </div>
+</main>
+
+<% if user_signed_in? %>
 <section class="py-5 text-center container">
-    <h1>Ayudanos a seguir creciendo</h1>
-    <div id="donate-button-container">
-        <div id="donate-button"></div>
-        <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
-        <script>
-            PayPal.Donation.Button({
-            env:'production',
-            hosted_button_id:'UMYVW69RC9N4S',
-            image: {
-            src:'https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif',
-            alt:'Donate with PayPal button',
-            title:'PayPal - The safer, easier way to pay online!',
-            }
-            }).render('#donate-button');
-        </script>
-    </div>      
+  <h1>Quieres recomendar un sitio??</h1>
+  <%= link_to "Link a Formulario", recomendation_index_path, class: "btn
+  btn-success" %>
+</section>
+<%end%>
+
+<section class="py-5 text-center container">
+  <h1>Ayudanos a seguir creciendo</h1>
+  <div id="donate-button-container">
+    <div id="donate-button"></div>
+    <script
+      src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js"
+      charset="UTF-8"
+    ></script>
+    <script>
+      PayPal.Donation.Button({
+        env: "production",
+        hosted_button_id: "UMYVW69RC9N4S",
+        image: {
+          src: "https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif",
+          alt: "Donate with PayPal button",
+          title: "PayPal - The safer, easier way to pay online!",
+        },
+      }).render("#donate-button");
+    </script>
+  </div>
 </section>
