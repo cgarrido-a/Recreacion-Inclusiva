@@ -30,12 +30,6 @@ const showRegiones = (region) => {
     $('.region-selector').append(`
         <option value="${region.nombre}">${region.nombre}</option>
     `);
-
-
-
     $('#regions').append(`<li>${region.nombre}: <%=@user.%> </li>`);
-
-
-
 }
 

@@ -15,6 +15,10 @@ h1, h3{
   font-family: 'Cabin', sans-serif;
 }
 
+h5{
+  font-family: 'Quicksand', sans-serif;
+}
+
 .card-publication {
   background-color: rgb(226, 218, 218);
   border-radius: 3em;
@@ -28,39 +32,67 @@ h1, h3{
 
 .nav-personal-style {
   background-color: rgb(14, 14, 95);
-  filter: opacity(50%);
+  filter: opacity(75%);
   font-weight: bold;
   font-size: 1.5rem;
+  font-family: 'Quicksand', sans-serif;
 }
 
 // HEADER
 
 .home-header {
   background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
-  width: 100%;
-  height: 100vh;
-  text-align: center;
+  width: 100vw;
+  height: 80vh;
+  text-align: left;
   display: flex;
   align-items: center;
 }
 
 .header-content{
   align-items: center;
-
+  justify-content: center;
 }
 
 .img-portada{
-  width: 80%;
+  width: 100%;
   border-radius: 5%;
-  filter: drop-shadow(8px 8px 10px rgb(208, 209, 255));
+  filter: drop-shadow(8px 8px 10px rgb(255, 255, 255));
 }
 
 
-.title-div,
-.img-title-div,
-.img-aboutUs,
-.text-aboutUs {
-  width: 45%;
+// SECTION ABOUT
+
+.about{
+  width: 100vw;
+  height: 70vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.img-about{
+  width: 90%;
+}
+
+.about-content{
+  align-items: center;
+  width: 100%;
+}
+
+// MAIN SECTION HOME DESTINOS
+
+.destinos{
+  background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buscador-region{
+  justify-content: left;
 }
 
 // PUBLICATIONS
@@ -70,8 +102,8 @@ h1, h3{
 }
 
 .images-index {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+ 
 }
 
 // FOOTER

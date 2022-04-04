@@ -22,7 +22,7 @@
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@500&family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@500&family=Josefin+Sans:wght@500&family=Quicksand:wght@500&display=swap" rel="stylesheet">
 
     <%= stylesheet_link_tag 'application', media: 'all',
     'data-turbolinks-track': 'reload' %> <%= javascript_include_tag(
@@ -38,7 +38,10 @@
       <%= alert %> <%= notice %>
     </div>
     <% end %>
-    <div class="content mb-5"><%= yield %></div>
+    <%= render "shared/navbar" %>
+
+    <div class="content mb-5">
+      <%= yield %></div>
 
     <%= render "shared/footer" %>
 
