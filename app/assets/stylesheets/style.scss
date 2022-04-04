@@ -5,7 +5,7 @@
 
 // ESTILOS PAGINA EN GENERAL
 body {
-  background-color: #f2f3f4;
+  background-color: white;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -20,8 +20,9 @@ h5{
 }
 
 .card-publication {
-  background-color: rgb(226, 218, 218);
+  background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
   border-radius: 3em;
+  height: 100%;
 }
 
 .content {
@@ -36,6 +37,7 @@ h5{
   font-weight: bold;
   font-size: 1.5rem;
   font-family: 'Quicksand', sans-serif;
+  
 }
 
 // HEADER
@@ -44,6 +46,7 @@ h5{
   background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
   width: 100vw;
   height: 80vh;
+  padding-top: 3em;
   text-align: left;
   display: flex;
   align-items: center;
@@ -96,6 +99,9 @@ h5{
 }
 
 // PUBLICATIONS
+.destinos-index{
+  padding-top: 2em;
+}
 .images-show {
   width: 300px;
   height: 300px;

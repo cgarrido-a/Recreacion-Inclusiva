@@ -1,30 +1,33 @@
-<div class="container card-publication shadow-lg my-5">
+
   <p id="notice"><%= notice %></p>
-  <div class="container card-publication">
-    <h1 class="text-center my-5">Destinos</h1>
-  
-    <div class="my-3 text-center">
-      <h6>Búsqueda por región</h6>
+ 
+  <h1 class="text-center my-5 destinos-index">Destinos</h1>
+
+  <header class="row justify-content-center mb-5">
+    <div class="my-3 col-md-4 text-center d-inline-block">
+      <h5>Búsqueda por región</h5>
       <%= search_form_for @q do |f| %>
           <%= f.select(:region_eq, [],{include_blank: 'All'},{ :class => 'region-selector'}) %>
           <%= f.submit 'Buscar', :class => 'btn btn-info' %>
        <% end %>
     </div>
     
-    <div class="my-3 text-center my-5">
-      <h6>Búsqueda por categoría</h6>
+    <div class="my-3 col-md-4  d-inline-block text-center ">
+      <h5>Búsqueda por categoría</h5>
       <%= search_form_for @q do |f| %>
           <%= f.select(:category_eq, ["Hoteleria", "Gastronomia", "Entretencion"],{include_blank: 'All'}) %>
           <%= f.submit 'Buscar', :class => 'btn btn-info'%>
       <%end%>
     </div>
+  </header>
+  
  
   
-  
-  <div class="container my-5 text-center">
+  <!-- card -->
+  <div class="my-5 ">
     <div class="row mx-auto d-flex justify-content-center">
         <% @publications.each do |publication| %>
-          <div class="card mb-3 col-md-5 mr-5 " style="max-width: 540px;">
+          <div class="card mb-3 col-md-6 mr-5 " style="max-width: 540px;">
             <div class="row no-gutters">
                 <div class="col-md-6">
                   <%= image_tag(publication.images[0], :class=> 'images-index') %>  
@@ -55,6 +58,5 @@
         <%= paginate @publication %>
     </div>
   </div>
-</div>
 
-</div>
+
