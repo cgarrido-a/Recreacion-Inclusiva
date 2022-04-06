@@ -1,5 +1,7 @@
 document.addEventListener("turbolinks:load", function () {
-    $('.gastro').on('click', function(){
-        
-    })
+    $(".alert").on('click', function () {
+        $(this).hide(500);
+    });
+
+
 });

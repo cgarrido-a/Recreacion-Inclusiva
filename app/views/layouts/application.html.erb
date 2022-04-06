@@ -30,17 +30,18 @@
   </head>
 
   <body>
-    <% if alert || notice %>
-    <div
-      class="alert alert-<%= alert ? 'danger': 'success' %> text-center py-3 mt-3 text-<%= alert ? 'danger': 'success' %> font-alert"
-      role="alert"
-    >
-      <%= alert %> <%= notice %>
-    </div>
-    <% end %>
     <%= render "shared/navbar" %>
-
+    
     <div class="content mb-5">
+      <% if alert || notice %>
+        <div
+          class="alert alert-<%= alert ? 'danger': 'success' %> text-center text-<%= alert ? 'danger': 'success' %> font-alert alertas"
+          role="alert"
+        >
+          <%= alert %> <%= notice %>
+        </div>
+      <% end %>
+      
       <%= yield %></div>
 
     <%= render "shared/footer" %>

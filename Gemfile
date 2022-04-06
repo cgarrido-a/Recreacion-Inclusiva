@@ -33,14 +33,14 @@ gem 'chartkick'
 gem 'groupdate'
 gem 'activeadmin'
 gem 'ransack'
-gem 'omniauth'
-gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
-gem "omniauth-rails_csrf_protection"
 gem 'sendgrid-ruby'
 gem 'sendgrid-actionmailer'
 gem 'paypal-sdk-rest'
 gem 'rollbar'
 gem 'kaminari'
+gem 'omniauth', '~> 2.0.4'
+gem 'omniauth-facebook'
+gem 'activerecord-session_store'
 
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
@@ -75,3 +75,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "aws-sdk-s3", "~> 1.113"

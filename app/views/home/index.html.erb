@@ -51,48 +51,28 @@
       <h2>¿Qué lugares quieres visitar?</h2>
   
     </div>
+
+    <div class="buscadores">
+      <div class="my-4 buscador-region">
+        <h5>Búsqueda por región</h5>
+        <%= search_form_for @q do |f| %>
+          <%= f.select(:region_eq,[],{include_blank: 'All'},{ :class => 'region-selector'}) %> 
+          <%= f.submit 'Buscar', :class =>  'btn btn-info' %> 
+        <% end %>
+      </div>
+  
+      <div class="my-3">
+        <h5>Búsqueda por categoría</h5>
+        <%= search_form_for @q do |f| %> 
+          <%= f.select(:category_eq, ["Hoteleria", "Gastronomia", "Entretencion"],{include_blank: 'All'}) %> 
+          <%= f.submit 'Buscar', :class => 'btn btn-info'%>
+        <%end%>
+      </div>
+    </div>
    
-    <div class="my-4 buscador-region">
-      <h5>Búsqueda por región</h5>
-      <%= search_form_for @q do |f| %>
-        <%= f.select(:region_eq,[],{include_blank: 'All'},{ :class => 'region-selector'}) %> 
-        <%= f.submit 'Buscar', :class =>  'btn btn-info' %> 
-      <% end %>
-    </div>
+  
 
-    <div class="my-3">
-      <h5>Búsqueda por categoría</h5>
-      <%= search_form_for @q do |f| %> 
-        <%= f.select(:category_eq, ["Hoteleria", "Gastronomia", "Entretencion"],{include_blank: 'All'}) %> 
-        <%= f.submit 'Buscar', :class => 'btn btn-info'%>
-      <%end%>
-    </div>
-
-    <div class="row">
-      
-      <div class="card mr-5" style="width: 18rem;">
-      <%= image_tag 'hotel-presidente-4s.jpg', :class=> 'images-index rounded' %>
-      <div class="card-body">
-        <h5 class="card-title">Hotelería</h5>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-      <div class="card mr-5" style="width: 18rem;">
-        <%= image_tag 'restaurant-scaled1000.jpg', :class=> 'images-index rounded' %>
-        <div class="card-body">
-          <h5 class="card-title">Gastronomía</h5>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>  
-      <div class="card" style="width: 18rem;">
-        <%= image_tag 'cine.jpeg', :class=> 'images-index rounded' %>
-        <div class="card-body">
-          <h5 class="card-title">Entretención</h5>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-
-    </div>
+    <%= render "shared/carousel-home" %>
   
 </main>
 
@@ -104,24 +84,27 @@
 </section>
 <%end%>
 
-<section class="py-5 text-center container">
-  <h1>Ayudanos a seguir creciendo</h1>
-  <div id="donate-button-container">
-    <div id="donate-button"></div>
-    <script
-      src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js"
-      charset="UTF-8"
-    ></script>
-    <script>
-      PayPal.Donation.Button({
-        env: "production",
-        hosted_button_id: "UMYVW69RC9N4S",
-        image: {
-          src: "https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif",
-          alt: "Donate with PayPal button",
-          title: "PayPal - The safer, easier way to pay online!",
-        },
-      }).render("#donate-button");
-    </script>
+<section class="py-5 text-center">
+  <div class="shadow paypal">
+    <h1>Ayúdanos a seguir creciendo</h1>
+    <div id="donate-button-container" >
+      <div id="donate-button" ></div>
+      <script
+        src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js"
+        charset="UTF-8"
+      ></script>
+      <script>
+        PayPal.Donation.Button({
+          env: "production",
+          hosted_button_id: "UMYVW69RC9N4S",
+          image: {
+            src: "https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif",
+            alt: "Donate with PayPal button",
+            title: "PayPal - The safer, easier way to pay online!",
+          },
+        }).render("#donate-button");
+      </script>
+    </div>
   </div>
+ 
 </section>
