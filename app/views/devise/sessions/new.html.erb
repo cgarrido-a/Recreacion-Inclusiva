@@ -1,16 +1,25 @@
-<div class="container card-publication shadow-lg my-5">
+<div class="container log-in shadow-lg">
   <div class="container w-50">
     <h2>Log in</h2>
   
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, class:"form-control" %>
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1"><i class="fa  fa-envelope"></i></span>
+        </div>
+        <%= f.text_field :email, autofocus: true, autocomplete: "email",  type:"email", :class => "form-control", :placeholder =>"Email" %>
+      </div>  
     </div>
-  
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, class:"form-control" %>
+
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1"><i class="fa  fa-key"></i></span>
+        </div>
+
+      <%= f.password_field :password, autocomplete: "new-password",  type: "password", class:"form-control", :placeholder =>"Password (6 caracteres minimo)"  %>
+      </div>  
     </div>
   
     <% if devise_mapping.rememberable? %>

@@ -1,53 +1,79 @@
-<div class="container card-publication shadow-lg my-5">
+<div class="container sign-up shadow-lg">
   <div class="container w-50 ">
-    <h2 class="mb-4">Sign up</h2>
+    <h2 class="my-4">Sign up</h2>
   
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
-    
-      <div class="field">
-        <%= f.label :name %><br />
-        <%= f.text_field :name, autofocus: true, class:"form-control" %>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+          </div>
+          <%= f.text_field :name, autofocus: true, autocomplete: "username", :class => "form-control", :placeholder =>"Nombre completo" %>
+        </div>  
+      </div>
+  
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><i class="fas fa-id-card"></i></span>
+          </div>
+          <%= f.text_field :rut, autofocus: true, autocomplete: "rut", :class => "form-control", :placeholder =>"RUT (12345678-9)" %>
+        </div>  
       </div>
     
-      <div class="field">
-        <%= f.label :rut%><br />
-        <%= f.text_field :rut, class:"form-control" %>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><i class="fa  fa-birthday-cake"></i></span>
+          </div>
+          <%= f.text_field :age, autofocus: true, autocomplete: "age", :class => "form-control", :placeholder =>"Edad (sólo el numero)" %>
+        </div>  
       </div>
-    
-      <div class="field">
-        <%= f.label :age %>
-        <%= f.number_field :age, class:"form-control" %>
-      </div>
-    
-      <div class="field">
-        <%= f.label :avatar %>
-        <%= f.file_field :avatar, class:"form-control" %>
+
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><i class="fas  fa-image"></i></span>
+          </div>
+          <%= f.file_field :avatar, autofocus: true, autocomplete: "avatar", :class => "form-control", :placeholder =>"Foto de perfil" %>
+        </div>  
       </div>
   
       <div class="field">
         <%= f.label :region %>
-        <%= f.select(:region, [],{},{ :class => 'region-selector' }) %>
+        <%= f.select(:region, [],{include_blank: 'Seleccionar Region'},{ :class => 'region-selector' }) %>
+      </div>
+
+
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><i class="fa  fa-envelope"></i></span>
+          </div>
+          <%= f.text_field :email, autofocus: true, autocomplete: "email",  type:"email", :class => "form-control", :placeholder =>"Email" %>
+        </div>  
       </div>
     
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autocomplete: "email", type:"email", class: "form-control"  %>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><i class="fa  fa-key"></i></span>
+          </div>
+
+        <%= f.password_field :password, autocomplete: "new-password",  type: "password", class:"form-control", :placeholder =>"Password (6 caracteres minimo)"  %>
+        </div>  
       </div>
     
-      <div class="field">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password",  type: "password", class:"form-control" %>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><i class="fa  fa-key"></i></span>
+          </div>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password",  type: "password", class:"form-control",  :placeholder =>"Confirmar password" %>
+        </div>  
       </div>
-    
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password",  type: "password", class:"form-control" %>
-      </div>
-    
+
       <div class="actions">
         <%= f.submit "Sign up", class: "btn btn-secondary my-5 btn-lg" %>
       </div>

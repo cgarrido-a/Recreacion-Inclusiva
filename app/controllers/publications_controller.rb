@@ -7,7 +7,6 @@ class PublicationsController < ApplicationController
     @publications = @q.result(distinct: true)
 
     @publication = Publication.order(created_at: :desc).page params[:page]
-
   end
 
   # GET /publications/1 or /publications/1.json
